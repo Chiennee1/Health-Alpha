@@ -6,17 +6,25 @@ export const WorkoutSetup = () => {
     const navigate = useNavigate();
     const [duration, setDuration] = useState(30);
 
+    const handleBack = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        // Navigate explicitly to the dashboard (home screen) as requested
+        navigate('/dashboard');
+    };
+
     return (
         <div className="flex flex-col h-full bg-background-dark relative">
-             <div className="flex items-center p-4 justify-between sticky top-0 z-20 bg-background-dark">
+             {/* Header */}
+             <div className="flex items-center p-4 justify-between sticky top-0 z-50 bg-background-dark/95 backdrop-blur-sm border-b border-white/5">
                 <button 
-                    onClick={() => navigate(-1)}
-                    className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 active:scale-95 transition-all"
+                    onClick={handleBack}
+                    className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-95 transition-all cursor-pointer"
+                    aria-label="Đóng"
                 >
                     <span className="material-symbols-outlined text-white text-2xl">close</span>
                 </button>
-                <h2 className="text-white font-bold text-lg">Bắt đầu tập luyện</h2>
-                <div className="w-10"></div>
+                <h2 className="text-white font-bold text-lg absolute left-1/2 -translate-x-1/2">Bắt đầu tập luyện</h2>
+                <div className="w-12"></div>
             </div>
 
             <div className="flex-1 p-6 flex flex-col gap-6 overflow-y-auto pb-24">
@@ -24,7 +32,7 @@ export const WorkoutSetup = () => {
                     <h3 className="text-gray-400 font-bold mb-3">Loại hình tập luyện</h3>
                     <div className="grid grid-cols-4 gap-3">
                         {['directions_run', 'directions_walk', 'directions_bike', 'fitness_center'].map((icon, i) => (
-                             <button key={i} className={`aspect-square rounded-xl flex flex-col items-center justify-center gap-2 border-2 ${i===0 ? 'bg-primary/20 border-primary text-primary' : 'bg-surface-dark border-transparent text-gray-400'}`}>
+                             <button key={i} className={`aspect-square rounded-xl flex flex-col items-center justify-center gap-2 border-2 ${i===0 ? 'bg-primary/20 border-primary text-primary' : 'bg-surface-dark border-transparent text-gray-400 hover:bg-gray-800'}`}>
                                 <span className="material-symbols-outlined text-3xl">{icon}</span>
                                 <span className="text-xs font-medium">{['Chạy bộ','Đi bộ','Đạp xe','Gym'][i]}</span>
                              </button>
@@ -46,7 +54,7 @@ export const WorkoutSetup = () => {
                 </div>
 
                 <div className="space-y-3">
-                     <div className="bg-surface-dark p-4 rounded-xl flex justify-between items-center">
+                     <div className="bg-surface-dark p-4 rounded-xl flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
                         <div className="flex items-center gap-3 text-white">
                             <span className="material-symbols-outlined text-gray-400">music_note</span>
                             <span>Âm nhạc</span>
@@ -56,20 +64,20 @@ export const WorkoutSetup = () => {
                             <span className="material-symbols-outlined">chevron_right</span>
                         </div>
                     </div>
-                    <div className="bg-surface-dark p-4 rounded-xl flex justify-between items-center">
+                    <div className="bg-surface-dark p-4 rounded-xl flex justify-between items-center cursor-pointer hover:bg-gray-800 transition-colors">
                         <div className="flex items-center gap-3 text-white">
                             <span className="material-symbols-outlined text-gray-400">volume_up</span>
                             <span>Hướng dẫn giọng nói</span>
                         </div>
                          <div className="w-12 h-6 bg-primary rounded-full relative">
-                             <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                             <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
                          </div>
                     </div>
                 </div>
 
                 <button 
                     onClick={() => navigate('/workout-active')}
-                    className="w-full h-14 bg-primary text-black font-bold rounded-full text-lg shadow-lg mt-auto"
+                    className="w-full h-14 bg-primary text-black font-bold rounded-full text-lg shadow-lg mt-auto hover:brightness-110 active:scale-[0.98] transition-all"
                 >
                     Bắt đầu
                 </button>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -30,7 +31,9 @@ export const ProfileScreen = () => {
       <div className="flex flex-col items-center py-6">
         <img src="https://picsum.photos/200" className="w-24 h-24 rounded-full border-4 border-surface-dark" />
         <h2 className="text-white text-xl font-bold mt-3">An Nguyễn</h2>
-        <p className="text-primary text-sm">Chỉnh sửa hồ sơ</p>
+        <button onClick={() => navigate('/edit-profile')} className="text-primary text-sm font-medium mt-1 hover:text-primary/80 transition-colors">
+            Chỉnh sửa hồ sơ
+        </button>
       </div>
 
       <div className="px-4 pb-6 space-y-6">

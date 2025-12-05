@@ -20,6 +20,7 @@ import { DevicePairing } from './screens/subscreens/DevicePairing';
 import { NotificationSettings } from './screens/subscreens/NotificationSettings';
 import { ConnectedDevices } from './screens/subscreens/ConnectedDevices';
 import { WorkoutSchedule } from './screens/subscreens/WorkoutSchedule';
+import { EditProfile } from './screens/subscreens/EditProfile';
 
 const BottomNav = () => {
   const location = useLocation();
@@ -89,6 +90,7 @@ export default function App() {
             <Route path="/notification-settings" element={<NotificationSettings />} />
             <Route path="/devices" element={<ConnectedDevices />} />
             <Route path="/workout-schedule" element={<WorkoutSchedule />} />
+            <Route path="/edit-profile" element={<EditProfile />} />
           </Routes>
         </div>
         <BottomNav />
