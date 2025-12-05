@@ -70,14 +70,14 @@ export const WorkoutSchedule = () => {
     return (
         <div className="flex flex-col h-screen bg-background-dark overflow-hidden">
             {/* Header */}
-            <div className="flex items-center p-4 justify-between sticky top-0 bg-background-dark z-10">
-                <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center hover:bg-surface-dark rounded-full transition-colors">
+            <div className="flex items-center p-4 justify-between sticky top-0 bg-background-dark z-50">
+                <button onClick={() => navigate('/workout')} className="w-10 h-10 flex items-center justify-center hover:bg-surface-dark rounded-full transition-colors cursor-pointer">
                     <span className="material-symbols-outlined text-white">arrow_back_ios_new</span>
                 </button>
                 <h2 className="text-white text-lg font-bold">Lịch tập luyện</h2>
                 <button 
                     onClick={() => navigate('/workout-setup')}
-                    className="w-10 h-10 flex items-center justify-center bg-surface-dark rounded-full text-white hover:bg-gray-700 transition-colors"
+                    className="w-10 h-10 flex items-center justify-center bg-surface-dark rounded-full text-white hover:bg-gray-700 transition-colors cursor-pointer"
                 >
                     <span className="material-symbols-outlined text-xl">add</span>
                 </button>
@@ -212,7 +212,7 @@ export const WorkoutSchedule = () => {
                 <div className="fixed bottom-6 right-6 z-20">
                     <button 
                         onClick={() => navigate('/workout-setup')}
-                        className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform text-black"
+                        className="w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform text-black cursor-pointer"
                     >
                         <span className="material-symbols-outlined text-3xl">add</span>
                     </button>

@@ -15,11 +15,11 @@ export const DevicePairing = () => {
 
     return (
         <div className="flex flex-col h-screen bg-background-dark">
-             <div className="flex items-center p-4 justify-between sticky top-0 z-10 bg-background-dark">
+             <div className="flex items-center p-4 justify-between sticky top-0 z-50 bg-background-dark">
                 {step === 3 ? (
                     <div className="w-10"></div> // Spacer for layout balance
                 ) : (
-                    <button onClick={() => navigate(-1)} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+                    <button onClick={() => navigate('/devices')} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors cursor-pointer">
                         <span className="material-symbols-outlined text-white">arrow_back_ios_new</span>
                     </button>
                 )}
@@ -64,7 +64,7 @@ export const DevicePairing = () => {
                         </div>
                         <button 
                             onClick={() => setStep(2)} 
-                            className="w-full bg-primary text-black font-bold h-14 rounded-full shadow-lg hover:brightness-110 active:scale-[0.98] transition-all"
+                            className="w-full bg-primary text-black font-bold h-14 rounded-full shadow-lg hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
                         >
                             Bắt đầu quét
                         </button>
@@ -124,13 +124,13 @@ export const DevicePairing = () => {
                         <div className="w-full space-y-4 mt-auto">
                              <button 
                                 onClick={() => navigate('/devices')} 
-                                className="w-full bg-primary text-black font-bold h-14 rounded-full shadow-lg hover:brightness-110 active:scale-[0.98] transition-all"
+                                className="w-full bg-primary text-black font-bold h-14 rounded-full shadow-lg hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer"
                              >
                                 Hoàn tất
                              </button>
                              <button 
                                 onClick={() => navigate('/devices')}
-                                className="w-full text-gray-400 font-medium text-sm p-2 hover:text-white transition-colors"
+                                className="w-full text-gray-400 font-medium text-sm p-2 hover:text-white transition-colors cursor-pointer"
                              >
                                 Đi đến Cài đặt
                              </button>

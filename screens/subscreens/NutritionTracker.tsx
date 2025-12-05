@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,8 +17,10 @@ export const NutritionTracker = () => {
     const navigate = useNavigate();
     return (
         <div className="flex flex-col h-full bg-background-dark overflow-y-auto pb-20">
-             <div className="flex items-center p-4 justify-between sticky top-0 bg-background-dark z-10">
-                <button onClick={() => navigate(-1)}><span className="material-symbols-outlined text-white">arrow_back_ios_new</span></button>
+             <div className="flex items-center p-4 justify-between sticky top-0 bg-background-dark z-50">
+                <button onClick={() => navigate('/dashboard')} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors cursor-pointer">
+                    <span className="material-symbols-outlined text-white">arrow_back_ios_new</span>
+                </button>
                 <h2 className="text-white font-bold">Hôm nay</h2>
                 <span className="material-symbols-outlined text-white">arrow_forward_ios</span>
             </div>
@@ -51,16 +54,16 @@ export const NutritionTracker = () => {
                 </div>
             </div>
 
-            <div className="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur border-t border-gray-800 p-4 max-w-md mx-auto">
+            <div className="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur border-t border-gray-800 p-4 max-w-md mx-auto z-20">
                  <div className="flex justify-around items-center">
-                    <button className="flex flex-col items-center text-primary">
+                    <button className="flex flex-col items-center text-primary cursor-pointer">
                         <span className="material-symbols-outlined">restaurant_menu</span>
                         <span className="text-xs">Thêm món</span>
                     </button>
-                    <button className="w-14 h-14 bg-primary rounded-full flex items-center justify-center -mt-8 shadow-lg text-black">
+                    <button className="w-14 h-14 bg-primary rounded-full flex items-center justify-center -mt-8 shadow-lg text-black cursor-pointer hover:scale-105 transition-transform">
                         <span className="material-symbols-outlined text-3xl">barcode_scanner</span>
                     </button>
-                    <button className="flex flex-col items-center text-gray-400">
+                    <button className="flex flex-col items-center text-gray-400 cursor-pointer hover:text-white">
                         <span className="material-symbols-outlined">add_a_photo</span>
                         <span className="text-xs">Quét ảnh</span>
                     </button>

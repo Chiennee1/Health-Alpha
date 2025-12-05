@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,22 +25,28 @@ export const ConnectedDevices = () => {
     const navigate = useNavigate();
     return (
         <div className="flex flex-col h-full bg-background-dark">
-             <div className="flex items-center p-4 justify-between">
-                <button onClick={() => navigate(-1)}><span className="material-symbols-outlined text-white">arrow_back_ios_new</span></button>
+             <div className="flex items-center p-4 justify-between sticky top-0 z-50 bg-background-dark">
+                <button onClick={() => navigate('/profile')} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors cursor-pointer">
+                    <span className="material-symbols-outlined text-white">arrow_back_ios_new</span>
+                </button>
                 <h2 className="text-white font-bold">Thiết bị đã kết nối</h2>
-                <button onClick={() => navigate('/device-pairing')}><span className="material-symbols-outlined text-white">add</span></button>
+                <button onClick={() => navigate('/device-pairing')} className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors cursor-pointer">
+                    <span className="material-symbols-outlined text-white">add</span>
+                </button>
             </div>
 
-            <h3 className="text-white font-bold px-4 mt-4 mb-2">Thiết bị của tôi</h3>
-            <div className="mx-4 bg-surface-dark rounded-xl overflow-hidden">
-                <DeviceItem icon="watch" name="Alpha Watch S2" status="Đã kết nối" />
-                <DeviceItem icon="fitness_center" name="Alpha Band Lite" status="Đã ngắt kết nối" />
-            </div>
+            <div className="flex-1 overflow-y-auto">
+                <h3 className="text-white font-bold px-4 mt-4 mb-2">Thiết bị của tôi</h3>
+                <div className="mx-4 bg-surface-dark rounded-xl overflow-hidden">
+                    <DeviceItem icon="watch" name="Alpha Watch S2" status="Đã kết nối" />
+                    <DeviceItem icon="fitness_center" name="Alpha Band Lite" status="Đã ngắt kết nối" />
+                </div>
 
-            <h3 className="text-white font-bold px-4 mt-6 mb-2">Thiết bị khác</h3>
-            <div className="mx-4 bg-surface-dark rounded-xl overflow-hidden">
-                <DeviceItem icon="scale" name="Cân thông minh Alpha" status="Chưa kết nối" action={true} />
-                <DeviceItem icon="blood_pressure" name="Máy đo huyết áp" status="Chưa kết nối" action={true} />
+                <h3 className="text-white font-bold px-4 mt-6 mb-2">Thiết bị khác</h3>
+                <div className="mx-4 bg-surface-dark rounded-xl overflow-hidden">
+                    <DeviceItem icon="scale" name="Cân thông minh Alpha" status="Chưa kết nối" action={true} />
+                    <DeviceItem icon="blood_pressure" name="Máy đo huyết áp" status="Chưa kết nối" action={true} />
+                </div>
             </div>
         </div>
     )
