@@ -1,0 +1,7 @@
+{
+  "name": "Health Anpha",
+  "description": "A comprehensive health and fitness tracking application featuring workout plans, nutrition tracking, social challenges, and device integration.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
